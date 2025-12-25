@@ -1,5 +1,5 @@
 async function getCurrentWheatherByCity(city){
-    const data = await fetch(`http://api.weatherapi.com/v1/current.json?key=12cd89bc6cf54f85a1c210433252412&q=${city}&aqi=no`)
+    const data = await fetch(`https://api.weatherapi.com/v1/current.json?key=12cd89bc6cf54f85a1c210433252412&q=${city}&aqi=no`)
     const currentWheather = await data.json()
     return currentWheather
 }
@@ -7,7 +7,7 @@ async function getCurrentWheatherByCity(city){
 const locationInput = document.querySelector('.location-input')
 
 async function getForecastByCity(city){
-    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=12cd89bc6cf54f85a1c210433252412&q=${city}&days=1&aqi=no&alerts=no`)
+    const data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=12cd89bc6cf54f85a1c210433252412&q=${city}&days=1&aqi=no&alerts=no`)
     const forecast = await data.json()
     return forecast
 }
@@ -59,7 +59,7 @@ function createForecastElement(iconSrc, time, temperature){
 
     const forecastIcon = document.createElement('img')
     forecastIcon.setAttribute('class', 'forecast-icon')
-    forecastIcon.setAttribute('src', `http:${iconSrc}`)
+    forecastIcon.setAttribute('src', `https:${iconSrc}`)
 
     const forecastTtemperature = document.createElement('p')
     forecastTtemperature.setAttribute('class', 'forecast-temperature')
@@ -89,6 +89,8 @@ function resetWeatherApp(){
     const forecastContainer = document.querySelector('.forecast')
     forecastContainer.innerHTML = ""
 }
+
+
 
 
 
